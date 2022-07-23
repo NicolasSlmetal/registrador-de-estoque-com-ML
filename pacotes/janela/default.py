@@ -24,8 +24,6 @@ class Janela:
         self.var = None
         self.var2 = None
         self.var3 = None
-        self.btnimg = None
-        self.entryimg = None
         self.btnpesquisa = None
         self.entry_sch = None
         self.cbox = None
@@ -64,13 +62,6 @@ class Janela:
         self.fr1 = Frame(self.notebook, relief="sunken", bg="#fff")
         # Label que armazenará a imagem da câmera
         self.lbl1 = Label(self.fr1)
-        self.var2.set("Caminho da imagem")
-        # Entry que exibe caminho da imagem do produto
-        self.entryimg = Entry(self.fr1, bg="#fff", textvariable=self.var2, state="disabled")
-        self.entryimg.place(x=220, y=100, width=300, height=30, anchor=CENTER)
-        # Botão que seleciona arquivo
-        self.btnimg = Button(self.fr1, command=self.anexar_img, text="Anexar")
-        self.btnimg.place(x=400, y=85, width=150, height=30)
         self.lbl1.place(x=300, y=300, width=280, height=280, anchor=CENTER)
         # Frame que exibe os produtos registrados
         self.fr2 = Frame(self.notebook, relief="sunken", bg="#fff")
@@ -183,25 +174,6 @@ class Janela:
             self.scaleqtd.configure(from_=1, to=max(qtds))
         else:
             self.scaleqtd.configure(from_=1, to=10)
-
-# Função para anexar imagem, atribuída ao btnimg
-
-    def anexar_img(self):
-        from tkinter.filedialog import askopenfilename
-        from tkinter import messagebox as mb
-        Tk().withdraw()
-        file = askopenfilename()
-        extval = False
-        for ext in ("jpg", "png"):
-            if file.endswith(ext):
-                extval = True
-                break
-        if extval:
-            self.var2.set(file)
-            self.camera.imgpath = file
-            self.entryimg.update()
-        else:
-            mb.showwarning(title="Aviso", message="Selecione um arquivo com extensão válida")
 
 # Função que remove produtos de acordo com quantidade, atribuída ao btndel
 

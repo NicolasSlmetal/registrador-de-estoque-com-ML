@@ -1,0 +1,6 @@
+[2022-07-23 13:36:33.440641] Exception in classifier.py - OpenCV(4.6.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\resize.cpp:4052: error: (-215:Assertion failed) !ssize.empty() in function 'cv::resize'
+
+[2022-07-23 13:37:22.762046] Exception in capturador.py - '<' not supported between instances of 'str' and 'NoneType'
+[2022-07-23 13:39:55.336027] Exception in classifier.py - OpenCV(4.6.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\resize.cpp:4052: error: (-215:Assertion failed) !ssize.empty() in function 'cv::resize'
+
+[2022-07-23 13:39:56.717783] Exception in capturador.py - '<' not supported between instances of 'str' and 'NoneType'

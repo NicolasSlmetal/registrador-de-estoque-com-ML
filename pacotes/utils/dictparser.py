@@ -3,7 +3,7 @@ import datetime
 
 # Conversão de string para dictionary
 # string deve seguir o padrão: {Nome: XXXX, Distribuidor: XXXX, Data de fabricacao: Objeto datetime
-# , Preco: XX.XX (float), Quantidade: XXXX (int)}
+# , Preco: XX.XX (float), Imagem: url da imagem,  Quantidade: XXXX (int)}
 
 
 def str2dict(string):
@@ -16,6 +16,10 @@ def str2dict(string):
                                      int(datasplit[1][2]), int(datasplit[1][3]), int(datasplit[1][4]),
                                      int(datasplit[1][5]), int(datasplit[1][6]))
     dict_ = {datasplit[0]: data}
+    urlstring = string[string.index("Imagem"):string.index("Quantidade")]
+    string = string.replace(urlstring, "")
+    urlsplit = urlstring.split(":", 1)
+    dict_[urlsplit[0]] = urlsplit[1].strip().removesuffix(",")
     splitstring = string.replace("{", "").replace("}", "").split(",")
     for item in splitstring:
         item = item.split(":")
